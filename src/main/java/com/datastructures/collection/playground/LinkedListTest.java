@@ -12,10 +12,19 @@ public class LinkedListTest {
         numeros.add(2);
         numeros.add(1);
 
-        System.out.println("Tamanho da lista antes da remoção: " + numeros.size());
-        numeros.remove(10);
+//        System.out.println("Tamanho da lista antes da remoção: " + numeros.size());
+//        numeros.remove(10);
+//
+//        System.out.println("Tamanho da lista após remoção: " + numeros.size());
 
-        System.out.println("Tamanho da lista após remoção: " + numeros.size());
+        System.out.println("Tamanho da lista antes da limpeza: " + numeros.size());
+        numeros.clear();
+
+        System.out.println("Tamanho da lista após limpeza: " + numeros.size());
+
+        numeros.add(2023);
+
+        int x = 0;
 
     }
 }

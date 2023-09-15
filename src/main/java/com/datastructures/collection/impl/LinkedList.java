@@ -80,6 +80,7 @@ public class LinkedList <T> implements List<T> {
 
     @Override
     public void clear() {
-
+        this.head = null;
+        this.size = 0;
     }
 }
