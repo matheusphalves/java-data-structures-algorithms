@@ -3,7 +3,7 @@ package com.datastructures.collection.impl;
 import com.datastructures.collection.Node;
 import com.datastructures.collection.api.List;
 
-public class LinkedList <T> implements List<T> {
+public class LinkedListImpl <T> implements List<T> {
 
     private Node<T> head;
     private int size;

@@ -1,12 +1,12 @@
 package com.datastructures.collection.playground;
 
 import com.datastructures.collection.api.List;
-import com.datastructures.collection.impl.LinkedList;
+import com.datastructures.collection.impl.LinkedListImpl;
 
 public class LinkedListTest {
 
     public static void main(String[] args) {
-        List<Integer> numeros = new LinkedList<>();
+        List<Integer> numeros = new LinkedListImpl<>();
 
         numeros.add(3);
         numeros.add(2);
