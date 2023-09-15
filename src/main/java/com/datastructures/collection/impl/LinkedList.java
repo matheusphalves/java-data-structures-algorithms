@@ -13,13 +13,13 @@ public class LinkedList <T> implements List<T> {
 
         Node<T> newNode = new Node<>(element);
 
-        if(head == null)
+        if (head == null)
             head = newNode;
-        else{
+        else {
 
             Node<T> auxNode = head;
 
-            while(auxNode.getNext() != null){
+            while (auxNode.getNext() != null) {
                 auxNode = auxNode.getNext();
             }
             auxNode.setNext(newNode);
@@ -31,22 +31,22 @@ public class LinkedList <T> implements List<T> {
     @Override
     public void remove(T element) {
 
-        if(head == null)
+        if (head == null)
             return;
 
-        if(head.getInfo().equals(element)){
+        if (head.getInfo().equals(element)) {
 
             head = head.getNext();
             size--;
-        }else{
+        } else {
 
             Node<T> auxNode = head;
 
-            while(auxNode.getNext() != null) {
+            while (auxNode.getNext() != null) {
 
                 Node<T> nextNode = auxNode.getNext();
 
-                if(nextNode.getInfo().equals(element)){
+                if (nextNode.getInfo().equals(element)) {
                     auxNode.setNext(nextNode.getNext());
                     size--;
                     break;
@@ -61,13 +61,13 @@ public class LinkedList <T> implements List<T> {
     @Override
     public boolean contains(T element) {
 
-        if(this.head == null)
+        if (this.head == null)
             return false;
 
         Node<T> auxNode = this.head;
 
-        while(auxNode != null) {
-            if(auxNode.getInfo().equals(element))
+        while (auxNode != null) {
+            if (auxNode.getInfo().equals(element))
                 return true;
 
             auxNode = auxNode.getNext();
@@ -81,16 +81,16 @@ public class LinkedList <T> implements List<T> {
 
         int indexOf = -1;
 
-        if(this.head == null)
+        if (this.head == null)
             return indexOf;
 
         Node<T> auxNode = this.head;
 
-        while(auxNode != null){
+        while (auxNode != null) {
 
             indexOf++;
 
-            if(auxNode.getInfo().equals(element))
+            if (auxNode.getInfo().equals(element))
                 return indexOf;
 
             auxNode = auxNode.getNext();
@@ -108,14 +108,14 @@ public class LinkedList <T> implements List<T> {
     @Override
     public T get(int index) {
 
-        if(index >= 0 && index <= this.size - 1){
+        if (index >= 0 && index <= this.size - 1) {
 
             int indexCounter = 0;
             Node<T> auxNode = this.head;
 
-            while(auxNode != null){
+            while (auxNode != null) {
 
-                if(indexCounter==index)
+                if (indexCounter == index)
                     return auxNode.getInfo();
 
                 auxNode = auxNode.getNext();
