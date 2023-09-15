@@ -4,7 +4,7 @@ public interface List <T> {
 
     void add(T element);
 
-    boolean remove(T element);
+    void remove(T element);
 
     boolean contains(T element);
 

@@ -29,18 +29,33 @@ public class LinkedList <T> implements List<T> {
     }
 
     @Override
-    public boolean remove(T element) {
+    public void remove(T element) {
 
         if(head == null)
-            return false;
+            return;
 
         if(head.getInfo().equals(element)){
 
             head = head.getNext();
             size--;
-        }
+        }else{
 
-        return true;
+            Node<T> auxNode = head;
+
+            while(auxNode.getNext() != null) {
+
+                Node<T> nextNode = auxNode.getNext();
+
+                if(nextNode.getInfo().equals(element)){
+                    auxNode.setNext(nextNode.getNext());
+                    size--;
+                    break;
+                }
+
+                auxNode = auxNode.getNext();
+
+            }
+        }
     }
 
     @Override
