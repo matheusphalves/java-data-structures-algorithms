@@ -17,12 +17,35 @@ public class LinkedListTest {
 //
 //        System.out.println("Tamanho da lista após remoção: " + numeros.size());
 
-        System.out.println("Tamanho da lista antes da limpeza: " + numeros.size());
-        numeros.clear();
+//        System.out.println("Tamanho da lista antes da limpeza: " + numeros.size());
+//        numeros.clear();
+//
+//        System.out.println("Tamanho da lista após limpeza: " + numeros.size());
+//
+//        numeros.add(2023);
 
-        System.out.println("Tamanho da lista após limpeza: " + numeros.size());
+//        System.out.println("Usando o contains");
+//
+//        System.out.println(numeros.contains(3));
+//        System.out.println(numeros.contains(2));
+//        System.out.println(numeros.contains(1));
+//        System.out.println(numeros.contains(20232));
 
-        numeros.add(2023);
+//        System.out.println("Usando o indexOf");
+//
+//        System.out.println(numeros.indexOf(1));
+//        System.out.println(numeros.indexOf(3));
+//        System.out.println(numeros.indexOf(2));
+//        System.out.println(numeros.indexOf(1));
+//        System.out.println(numeros.indexOf(202302002));
+
+        System.out.println("Usando o get");
+
+        System.out.println(numeros.get(0));
+        System.out.println(numeros.get(1));
+        System.out.println(numeros.get(2));
+        System.out.println(numeros.get(3));
+        System.out.println(numeros.get(4));
 
         int x = 0;
 
