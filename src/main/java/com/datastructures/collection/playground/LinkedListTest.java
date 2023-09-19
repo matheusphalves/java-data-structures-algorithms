@@ -39,15 +39,25 @@ public class LinkedListTest {
 //        System.out.println(numeros.indexOf(1));
 //        System.out.println(numeros.indexOf(202302002));
 
-        System.out.println("Usando o get");
+//        System.out.println("Usando o get");
+//
+//        System.out.println(numeros.get(0));
+//        System.out.println(numeros.get(1));
+//        System.out.println(numeros.get(2));
+//        System.out.println(numeros.get(3));
+//        System.out.println(numeros.get(4));
 
-        System.out.println(numeros.get(0));
-        System.out.println(numeros.get(1));
-        System.out.println(numeros.get(2));
-        System.out.println(numeros.get(3));
-        System.out.println(numeros.get(4));
+//        int x = 0;
 
-        int x = 0;
+        List<Car> cars = new LinkedListImpl<>();
+
+        Car carA = new Car(5);
+        Car carB = new Car(5);
+
+        cars.add(carA);
+
+        System.out.println("Contains que funciona: " + cars.contains(carA));
+        System.out.println("Contains que NÃO funciona: " + cars.contains(carB));
 
     }
 }
