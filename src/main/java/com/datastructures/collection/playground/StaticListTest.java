@@ -18,9 +18,19 @@ public class StaticListTest {
 //        System.out.println("Index of: " + numeros.indexOf(3));
 //        System.out.println("Index of: " + numeros.indexOf(6));
 //        System.out.println("Index of: " + numeros.indexOf(4));
-        System.out.println("Contains: " + numeros.contains(4));
-        System.out.println("Contains: " + numeros.contains(1000));
-        System.out.println("Contains: " + numeros.contains(2));
+//        System.out.println("Contains: " + numeros.contains(4));
+//        System.out.println("Contains: " + numeros.contains(1000));
+//        System.out.println("Contains: " + numeros.contains(2));
+
+        numeros.remove(1);
+        numeros.remove(2);
+        numeros.remove(6);
+        numeros.remove(3);
+        numeros.remove(4);
+
+        numeros.add(20);
+
+        int x = 0;
 
 
     }
