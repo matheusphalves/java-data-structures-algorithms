@@ -1,11 +1,11 @@
 package com.datastructures.collection.playground;
 
 import com.datastructures.collection.api.List;
-import com.datastructures.collection.impl.StaticList;
+import com.datastructures.collection.impl.StaticListImpl;
 
 public class StaticListTest {
     public static void main(String[] args) {
-        List<Integer> numeros = new StaticList<>(5);
+        List<Integer> numeros = new StaticListImpl<>(5);
 
         numeros.add(1);
         numeros.add(2);

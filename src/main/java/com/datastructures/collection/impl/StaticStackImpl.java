@@ -2,13 +2,13 @@ package com.datastructures.collection.impl;
 
 import com.datastructures.collection.api.Stack;
 
-public class StaticStack <T> implements Stack<T> {
+public class StaticStackImpl <T> implements Stack<T> {
 
     private T[] elements;
     private int size;
     private final int stackSize;
 
-    public StaticStack(int stackSize){
+    public StaticStackImpl(int stackSize){
         this.elements = (T[]) new Object[stackSize];
         this.stackSize = stackSize;
     }

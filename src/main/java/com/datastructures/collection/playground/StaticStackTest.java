@@ -1,11 +1,11 @@
 package com.datastructures.collection.playground;
 
 import com.datastructures.collection.api.Stack;
-import com.datastructures.collection.impl.StaticStack;
+import com.datastructures.collection.impl.StaticStackImpl;
 
 public class StaticStackTest {
     public static void main(String[] args) {
-        Stack<Integer> numeros = new StaticStack<>(5);
+        Stack<Integer> numeros = new StaticStackImpl<>(5);
 
 //        System.out.println("Peek: " + numeros.peek());
 //        System.out.println("IsEmpty: " + numeros.empty());

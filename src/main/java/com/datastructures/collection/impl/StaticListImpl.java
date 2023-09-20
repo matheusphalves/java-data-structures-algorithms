@@ -2,13 +2,13 @@ package com.datastructures.collection.impl;
 
 import com.datastructures.collection.api.List;
 
-public class StaticList <T> implements List<T> {
+public class StaticListImpl <T> implements List<T> {
 
     private T[] elements;
     private int size;
     private final int listSize;
 
-    public StaticList(int listSize){
+    public StaticListImpl(int listSize){
         this.listSize = listSize;
         this.clear();
     }
