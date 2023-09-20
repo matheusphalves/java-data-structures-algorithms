@@ -49,15 +49,5 @@ public class LinkedListTest {
 
 //        int x = 0;
 
-        List<Car> cars = new LinkedListImpl<>();
-
-        Car carA = new Car(5);
-        Car carB = new Car(5);
-
-        cars.add(carA);
-
-        System.out.println("Contains que funciona: " + cars.contains(carA));
-        System.out.println("Contains que NÃO funciona: " + cars.contains(carB));
-
     }
 }
