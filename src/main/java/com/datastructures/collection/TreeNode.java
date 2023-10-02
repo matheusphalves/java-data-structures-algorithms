@@ -1,11 +1,21 @@
 package com.datastructures.collection;
 
-public class NoArvore <T extends Comparable<T>>{
+public class TreeNode <T extends Comparable<T>>{
 
     private  T info;
 
-    private NoArvore<T> esquerdo;
-    private NoArvore<T> direito;
+    private TreeNode<T> leftNode;
+    private TreeNode<T> rightNode;
+
+    public TreeNode(T info){
+        this.info = info;
+    }
+
+    public TreeNode(T info, TreeNode<T> leftNode, TreeNode<T> rightNode){
+        this.info = info;
+        this.leftNode = leftNode;
+        this.rightNode = rightNode;
+    }
 
     public T getInfo() {
         return info;
@@ -15,19 +25,19 @@ public class NoArvore <T extends Comparable<T>>{
         this.info = info;
     }
 
-    public NoArvore<T> getEsquerdo() {
-        return esquerdo;
+    public TreeNode<T> getLeftNode() {
+        return leftNode;
     }
 
-    public void setEsquerdo(NoArvore<T> esquerdo) {
-        this.esquerdo = esquerdo;
+    public void setLeftNode(TreeNode<T> leftNode) {
+        this.leftNode = leftNode;
     }
 
-    public NoArvore<T> getDireito() {
-        return direito;
+    public TreeNode<T> getRightNode() {
+        return rightNode;
     }
 
-    public void setDireito(NoArvore<T> direito) {
-        this.direito = direito;
+    public void setRightNode(TreeNode<T> rightNode) {
+        this.rightNode = rightNode;
     }
 }
