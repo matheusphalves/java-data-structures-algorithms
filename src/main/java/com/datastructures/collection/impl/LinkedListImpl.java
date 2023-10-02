@@ -132,4 +132,18 @@ public class LinkedListImpl <T> implements List<T> {
         this.head = null;
         this.size = 0;
     }
+
+    @Override
+    public String toString(){
+        Node<T> auxNode = this.head;
+
+        StringBuilder stringBuffer = new StringBuilder();
+
+        while(auxNode != null){
+            stringBuffer.append(auxNode.getInfo()).append(", ");
+            auxNode = auxNode.getNext();
+        }
+
+        return stringBuffer.toString();
+    }
 }
