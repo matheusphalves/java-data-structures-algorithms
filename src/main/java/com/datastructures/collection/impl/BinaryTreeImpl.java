@@ -125,7 +125,29 @@ public class BinaryTreeImpl
 
     @Override
     public TreeNode<T> search(T element) {
-        return null;
+
+        return binarySearch(this.rootNode, element);
+
+    }
+
+    private TreeNode<T> binarySearch(TreeNode<T> node, T element){
+
+        if(node == null)
+            return null;
+
+        T nodeInfo = node.getInfo();
+
+        int comparingResult = element.compareTo(nodeInfo);
+
+        if(comparingResult==0)
+            return node;
+
+        else if(comparingResult > 0)
+            return binarySearch(node.getRightNode(), element);
+
+        else
+            return binarySearch(node.getLeftNode(), element);
+
     }
 
     @Override

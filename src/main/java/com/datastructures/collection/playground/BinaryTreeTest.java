@@ -18,6 +18,7 @@ public class BinaryTreeTest {
         numeros.add(7);
         numeros.add(13);
 
+        System.out.println(numeros.search(50));
         System.out.println(numeros.inOrder().toString());
         System.out.println(numeros.preOrder());
         System.out.println(numeros.postOrder());
