@@ -151,13 +151,45 @@ public class BinaryTreeImpl
     }
 
     @Override
-    public int nodeDepth(T element) {
-        return 0;
+    public int getNodeDepth(T element) {
+        return evaluateNodeDepth(rootNode, element, 0);
     }
 
+    private int evaluateNodeDepth(TreeNode<T> node, T element, int depthCounter){
+
+        if(node == null)
+            return -1;
+
+        T nodeInfo = node.getInfo();
+        int comparingResult = element.compareTo(nodeInfo);
+
+        if(comparingResult==0)
+            return depthCounter;
+
+        else if(comparingResult > 0)
+            return evaluateNodeDepth(node.getRightNode(), element, depthCounter + 1);
+
+        else
+            return evaluateNodeDepth(node.getLeftNode(), element, depthCounter + 1);
+
+    }
     @Override
     public int getTreeHeight() {
-        return 0;
+
+        return evaluateTreeHeight(rootNode, -1);
+
+    }
+
+    private int evaluateTreeHeight(TreeNode<T> node, int depthCounter){
+
+        if(node == null)
+            return depthCounter;
+
+        int leftDepth = evaluateTreeHeight(node.getLeftNode(), depthCounter + 1);
+        int rightDepth = evaluateTreeHeight(node.getRightNode(), depthCounter + 1);
+
+        return Math.max(leftDepth, rightDepth);
+
     }
 
 

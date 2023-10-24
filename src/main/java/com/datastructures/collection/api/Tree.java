@@ -16,7 +16,7 @@ public interface Tree <T extends Comparable<T>> {
 
     public TreeNode<T> search(T element);
 
-    public int nodeDepth(T element);
+    public int getNodeDepth(T element);
 
     public int getTreeHeight();
 

@@ -17,8 +17,12 @@ public class BinaryTreeTest {
         numeros.add(4);
         numeros.add(7);
         numeros.add(13);
+        numeros.add(12);
+        numeros.add(5);
 
         System.out.println(numeros.search(50));
+        System.out.println("Altura da árvore: " + numeros.getTreeHeight());
+        System.out.println("Profundidade do nó: " + numeros.getNodeDepth(5));
         System.out.println(numeros.inOrder().toString());
         System.out.println(numeros.preOrder());
         System.out.println(numeros.postOrder());
