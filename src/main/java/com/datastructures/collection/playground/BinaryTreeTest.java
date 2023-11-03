@@ -18,6 +18,10 @@ public class BinaryTreeTest {
         numbers.add(4);
         numbers.add(7);
         numbers.add(13);
+
+        System.out.println("Pre Order: " + numbers.preOrder());
+        System.out.println("In Order: " + numbers.inOrder());
+        System.out.println("Post Order: " + numbers.postOrder());
         int x = 0;
     }
 }

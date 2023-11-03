@@ -52,7 +52,7 @@ public class BinaryTreeImpl
 
     @Override
     public boolean isEmpty() {
-        return false;
+        return root == null;
     }
 
     @Override
@@ -72,16 +72,70 @@ public class BinaryTreeImpl
 
     @Override
     public List<T> preOrder() {
-        return null;
+
+        List<T> preOrderElements = new LinkedListImpl<>();
+
+        preOrderNavigator(root, preOrderElements);
+
+        return preOrderElements;
+    }
+
+    private void preOrderNavigator(TreeNode<T> rootNode, List<T> elements) {
+
+        if(rootNode == null)
+            return;
+
+        elements.add(rootNode.getInfo());
+
+        preOrderNavigator(rootNode.getLeftNode(), elements);
+
+        preOrderNavigator(rootNode.getRightNode(), elements);
+
     }
 
     @Override
     public List<T> inOrder() {
-        return null;
+
+        List<T> inOrderElements = new LinkedListImpl<>();
+
+        inOrderNavigator(root, inOrderElements);
+
+        return inOrderElements;
+    }
+
+    private void inOrderNavigator(TreeNode<T> rootNode, List<T> elements) {
+
+        if(rootNode == null)
+            return;
+
+        inOrderNavigator(rootNode.getLeftNode(), elements);
+
+        elements.add(rootNode.getInfo());
+
+        inOrderNavigator(rootNode.getRightNode(), elements);
+
     }
 
     @Override
     public List<T> postOrder() {
-        return null;
+
+        List<T> postOrderElements = new LinkedListImpl<>();
+
+        postOrderNavigator(root, postOrderElements);
+
+        return postOrderElements;
+    }
+
+    private void postOrderNavigator(TreeNode<T> rootNode, List<T> elements) {
+
+        if(rootNode == null)
+            return;
+
+        postOrderNavigator(rootNode.getLeftNode(), elements);
+
+        postOrderNavigator(rootNode.getRightNode(), elements);
+
+        elements.add(rootNode.getInfo());
+
     }
 }
