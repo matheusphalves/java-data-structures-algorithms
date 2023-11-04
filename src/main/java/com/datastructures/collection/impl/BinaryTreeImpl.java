@@ -62,12 +62,44 @@ public class BinaryTreeImpl
 
     @Override
     public int nodeDepth(T element) {
-        return 0;
+        return evaluateNodeDepth(root, element, 0);
+    }
+
+    private int evaluateNodeDepth(TreeNode<T> node, T element, int depthCounter){
+
+        if(node == null)
+            return -1;
+
+        int comparingResult = element.compareTo(node.getInfo());
+
+        if(comparingResult == 0)
+            return depthCounter;
+        else if (comparingResult > 0)
+            return evaluateNodeDepth(node.getRightNode(), element, depthCounter + 1);
+        else
+            return evaluateNodeDepth(node.getLeftNode(), element, depthCounter + 1);
+
     }
 
     @Override
     public TreeNode<T> search(T element) {
-        return null;
+        return binarySearch(root, element);
+    }
+
+    private TreeNode<T> binarySearch(TreeNode<T> node, T element) {
+
+        if(node == null)
+            return null;
+
+        int comparingResult = element.compareTo(node.getInfo());
+
+        if(comparingResult == 0)
+            return node;
+        else if (comparingResult > 0)
+            return binarySearch(node.getRightNode(), element);
+        else
+            return binarySearch(node.getLeftNode(), element);
+
     }
 
     @Override
