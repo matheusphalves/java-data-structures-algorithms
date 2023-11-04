@@ -57,7 +57,19 @@ public class BinaryTreeImpl
 
     @Override
     public int getTreeHeight() {
-        return 0;
+        return evaluateTreeHeight(root, -1);
+    }
+
+    private int evaluateTreeHeight(TreeNode<T> node, int depthCounter){
+
+        if(node == null)
+            return depthCounter;
+
+        int leftDepth = evaluateTreeHeight(node.getLeftNode(), depthCounter + 1);
+        int rightDepth = evaluateTreeHeight(node.getRightNode(), depthCounter + 1);
+
+        return Math.max(leftDepth, rightDepth);
+
     }
 
     @Override
