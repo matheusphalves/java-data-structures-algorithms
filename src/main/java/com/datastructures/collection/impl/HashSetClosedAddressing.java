@@ -4,27 +4,62 @@ import com.datastructures.collection.api.Set;
 
 public class HashSetClosedAddressing <T> implements Set<T> {
 
-    private final int DEFAULT_CAPACITY = 17;
-
-    private int CURRENT_CAPACITY;
+    private final int DEFAULT_CAPACITY = 5;
 
     private LinkedListImpl<T>[] table;
+    private final float LOAD_FACTOR = 0.75f;
 
     private int size;
 
-    public HashSetClosedAddressing(){
-        CURRENT_CAPACITY = DEFAULT_CAPACITY;
+    public HashSetClosedAddressing() {
         clear();
     }
 
-    @Override
-    public boolean add(T element) {
+    private boolean isLoadFactorExceeded() {
+        return (double) size / table.length > LOAD_FACTOR;
+    }
 
+    @Override
+    public void add(T element) {
+
+        if(contains(element))
+            return;
+
+        if(isLoadFactorExceeded())
+            resizeTable();
+
+        addToTable(element);
+
+    }
+
+    private void addToTable(T element){
         int index = getHash(element);
 
-        table[index].add(element);
+        if(table[index] == null)
+            table[index] = new LinkedListImpl<>();
 
-        return true;
+        table[index].add(element);
+        size++;
+    }
+
+    private void resizeTable(){
+
+        Object[] oldTable = table;
+
+        table = new LinkedListImpl[table.length * 2];
+
+        size=0;
+
+        for(Object entry: oldTable) {
+
+            if(entry == null)
+                continue;
+
+            LinkedListImpl<T> elements = (LinkedListImpl<T>) entry;
+
+            for(T element: elements.toArray()) addToTable(element);
+
+        }
     }
 
     @Override
@@ -36,20 +71,21 @@ public class HashSetClosedAddressing <T> implements Set<T> {
             return false;
 
         table[index].remove(element);
+        size--;
 
         return table[index].contains(element);
     }
 
     private int getHash(T element){
-        return Math.abs(element.hashCode()) % CURRENT_CAPACITY;
+        return Math.abs(element.hashCode()) % table.length;
     }
 
     @Override
     public void clear() {
 
-        table = new LinkedListImpl[CURRENT_CAPACITY];
+        table = new LinkedListImpl[DEFAULT_CAPACITY];
 
-        for(int index=0; index<CURRENT_CAPACITY; index++){
+        for(int index=0; index< table.length; index++){
             table[index] = new LinkedListImpl<>();
         }
 

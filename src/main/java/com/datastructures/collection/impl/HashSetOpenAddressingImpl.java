@@ -2,26 +2,39 @@ package com.datastructures.collection.impl;
 
 import com.datastructures.collection.api.Set;
 
-import java.util.Iterator;
-
 public class HashSetOpenAddressingImpl <T> implements Set<T> {
 
     private Object[] table;
-
-    // TODO implement resize based on LOAD_FACTOR
-
-    private final int MAX_CAPACITY;
-
+    private final float LOAD_FACTOR = 0.75f;
+    private final int INITIAL_CAPACITY;
     private int size;
 
     public HashSetOpenAddressingImpl(int capacity){
-        MAX_CAPACITY = capacity;
-        table = new Object[MAX_CAPACITY];
+
+        if(capacity <=0)
+            throw new IllegalArgumentException("Table capacity should be greater than zero: " + capacity);
+
+        INITIAL_CAPACITY = capacity;
+        table = new Object[INITIAL_CAPACITY];
+    }
+
+    private boolean isLoadFactorExceeded() {
+        return (double) size / table.length > LOAD_FACTOR;
     }
 
     @Override
-    public boolean add(T element) {
+    public void add(T element) {
 
+        if(contains(element))
+           return;
+
+        if(isLoadFactorExceeded())
+            resizeTable();
+
+        addToTable(element);
+    }
+
+    private void addToTable(T element){
         int index = getHash(element);
 
         while(table[index] != null){
@@ -30,8 +43,22 @@ public class HashSetOpenAddressingImpl <T> implements Set<T> {
 
         table[index] = element;
         size++;
+    }
 
-        return false;
+    private void resizeTable(){
+
+        Object[] oldTable = table;
+
+        table = new Object[table.length * 2];
+
+        for(Object entry: oldTable) {
+
+            if(entry == null)
+                continue;
+
+            T element = (T) entry;
+            addToTable(element);
+        }
     }
 
     private int getHash(T element){
@@ -58,7 +85,8 @@ public class HashSetOpenAddressingImpl <T> implements Set<T> {
 
     @Override
     public void clear() {
-        table = new Object[MAX_CAPACITY];
+        table = new Object[INITIAL_CAPACITY];
+        size = 0;
     }
 
     @Override
