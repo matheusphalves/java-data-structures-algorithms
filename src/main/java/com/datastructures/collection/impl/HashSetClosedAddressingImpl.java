@@ -2,7 +2,7 @@ package com.datastructures.collection.impl;
 
 import com.datastructures.collection.api.Set;
 
-public class HashSetClosedAddressing <T> implements Set<T> {
+public class HashSetClosedAddressingImpl <T> implements Set<T> {
 
     private final int DEFAULT_CAPACITY = 5;
 
@@ -11,7 +11,7 @@ public class HashSetClosedAddressing <T> implements Set<T> {
 
     private int size;
 
-    public HashSetClosedAddressing() {
+    public HashSetClosedAddressingImpl() {
         clear();
     }
 

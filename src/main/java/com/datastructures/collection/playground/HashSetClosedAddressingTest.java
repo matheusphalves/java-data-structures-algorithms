@@ -1,12 +1,12 @@
 package com.datastructures.collection.playground;
 
 import com.datastructures.collection.api.Set;
-import com.datastructures.collection.impl.HashSetClosedAddressing;
+import com.datastructures.collection.impl.HashSetClosedAddressingImpl;
 
 public class HashSetClosedAddressingTest {
 
     public static void main(String[] args) {
-        Set<Integer> hashSet = new HashSetClosedAddressing<>();
+        Set<Integer> hashSet = new HashSetClosedAddressingImpl<>();
 
         hashSet.add(1);
         hashSet.add(2);
