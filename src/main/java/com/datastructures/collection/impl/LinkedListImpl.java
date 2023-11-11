@@ -146,4 +146,20 @@ public class LinkedListImpl <T> implements List<T> {
 
         return stringBuffer.toString();
     }
+
+    public T[] toArray(){
+        T[] objects = (T[]) new Object[size];
+
+        Node<T> auxNode = head;
+        int index = 0;
+
+        while(auxNode != null){
+            objects[index] = auxNode.getInfo();
+            auxNode = auxNode.getNext();
+            index++;
+        }
+
+        return objects;
+
+    }
 }
