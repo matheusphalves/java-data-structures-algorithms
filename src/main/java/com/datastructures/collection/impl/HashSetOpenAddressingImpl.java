@@ -9,12 +9,12 @@ public class HashSetOpenAddressingImpl <T> implements Set<T> {
     private final int INITIAL_CAPACITY;
     private int size;
 
-    public HashSetOpenAddressingImpl(int capacity){
+    public HashSetOpenAddressingImpl(int initialCapacity){
 
-        if(capacity <=0)
-            throw new IllegalArgumentException("Table capacity should be greater than zero: " + capacity);
+        if(initialCapacity <=0)
+            throw new IllegalArgumentException("Table capacity should be greater than zero: " + initialCapacity);
 
-        INITIAL_CAPACITY = capacity;
+        INITIAL_CAPACITY = initialCapacity;
         table = new Object[INITIAL_CAPACITY];
     }
 

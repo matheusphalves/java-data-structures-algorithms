@@ -10,7 +10,17 @@ public class HashMapOpenAddressingImpl <K, V> implements Map<K, V> {
 
     private final float LOAD_FACTOR = 0.75f;
 
+    private final int INITIAL_CAPACITY;
+
     private int size;
+
+    public HashMapOpenAddressingImpl(int initialCapacity){
+        if(initialCapacity <=0)
+            throw new IllegalArgumentException("Table capacity should be greater than zero: " + initialCapacity);
+
+        INITIAL_CAPACITY = initialCapacity;
+        hashTable = (Entry<K, V>[]) new Object[INITIAL_CAPACITY];
+    }
 
     @Override
     public V put(K key, V value) {
