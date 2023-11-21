@@ -1,6 +1,6 @@
 package com.datastructures.collection.api;
 
-import com.datastructures.collection.TreeNode;
+import com.datastructures.collection.internal.node.TreeNode;
 
 public interface Tree  <T extends Comparable<T>> {
 

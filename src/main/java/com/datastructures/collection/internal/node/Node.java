@@ -1,4 +1,4 @@
-package com.datastructures.collection;
+package com.datastructures.collection.internal.node;
 
 public class Node <T> {
     private T info;

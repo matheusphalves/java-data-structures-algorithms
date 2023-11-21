@@ -1,6 +1,6 @@
 package com.datastructures.collection.impl;
 
-import com.datastructures.collection.Node;
+import com.datastructures.collection.internal.node.Node;
 import com.datastructures.collection.api.Stack;
 
 public class StackImpl <T> implements Stack<T> {

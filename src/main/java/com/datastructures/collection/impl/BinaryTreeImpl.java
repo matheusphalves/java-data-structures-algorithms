@@ -1,6 +1,6 @@
 package com.datastructures.collection.impl;
 
-import com.datastructures.collection.TreeNode;
+import com.datastructures.collection.internal.node.TreeNode;
 import com.datastructures.collection.api.List;
 import com.datastructures.collection.api.Tree;
 
