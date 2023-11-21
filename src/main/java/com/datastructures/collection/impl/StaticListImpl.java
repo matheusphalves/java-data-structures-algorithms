@@ -2,6 +2,8 @@ package com.datastructures.collection.impl;
 
 import com.datastructures.collection.api.List;
 
+import java.util.Arrays;
+
 public class StaticListImpl <T> implements List<T> {
 
     private T[] elements;
@@ -91,5 +93,10 @@ public class StaticListImpl <T> implements List<T> {
     public void clear() {
         this.elements = (T[]) new Object[this.listSize];
         this.size = 0;
+    }
+
+    @Override
+    public T[] toArray() {
+        return Arrays.copyOf(this.elements, this.elements.length);
     }
 }
