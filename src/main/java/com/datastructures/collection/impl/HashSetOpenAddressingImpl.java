@@ -60,6 +60,8 @@ public class HashSetOpenAddressingImpl  <T> implements Set<T> {
 
         table = new Object[table.length * 2];
 
+        size = 0;
+
         for(Object entry: oldTable){
 
             if(entry == null)
