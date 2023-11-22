@@ -1,6 +1,7 @@
 package com.datastructures.collection.impl;
 
 import com.datastructures.collection.api.List;
+import jdk.jshell.spi.ExecutionControl;
 
 import java.util.Arrays;
 
@@ -98,5 +99,13 @@ public class StaticListImpl <T> implements List<T> {
     @Override
     public T[] toArray() {
         return Arrays.copyOf(this.elements, this.elements.length);
+    }
+
+    public T[] toArray(Class<?> type) {
+
+        if(type.isInstance(this.elements))
+            return  Arrays.copyOf(this.elements, this.elements.length);
+
+        throw new IllegalArgumentException("The class type provided isn't compatible with the current type");
     }
 }

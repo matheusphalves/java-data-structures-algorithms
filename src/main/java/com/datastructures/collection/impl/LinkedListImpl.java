@@ -3,6 +3,8 @@ package com.datastructures.collection.impl;
 import com.datastructures.collection.internal.node.Node;
 import com.datastructures.collection.api.List;
 
+import java.lang.reflect.Array;
+
 public class LinkedListImpl <T> implements List<T> {
 
     private Node<T> head;
@@ -149,6 +151,23 @@ public class LinkedListImpl <T> implements List<T> {
 
     public T[] toArray(){
         T[] objects = (T[]) new Object[size];
+
+        Node<T> auxNode = head;
+        int index = 0;
+
+        while(auxNode != null){
+            objects[index] = auxNode.getInfo();
+            auxNode = auxNode.getNext();
+            index++;
+        }
+
+        return objects;
+
+    }
+
+    public T[] toArray(Class<?> type){
+        @SuppressWarnings("unchecked")
+        T[] objects = (T[]) Array.newInstance(type, size);
 
         Node<T> auxNode = head;
         int index = 0;
