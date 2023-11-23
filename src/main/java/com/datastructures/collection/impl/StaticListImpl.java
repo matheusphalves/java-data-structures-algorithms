@@ -99,4 +99,15 @@ public class StaticListImpl <T> implements List<T> {
     public T[] toArray() {
         return Arrays.copyOf(this.elements, this.elements.length);
     }
+
+    @Override
+    public T[] toArray(Class<?> type) {
+
+        if(type.isInstance(elements))
+            return Arrays.copyOf(this.elements, this.elements.length);
+
+        throw new IllegalArgumentException("The class type provided isn't compatible with the current type.");
+    }
+
+
 }

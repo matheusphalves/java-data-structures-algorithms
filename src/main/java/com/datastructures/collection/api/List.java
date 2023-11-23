@@ -16,6 +16,8 @@ public interface List <T> {
 
     void clear();
 
-    public T[] toArray();
+    T[] toArray();
+
+    T[] toArray(Class<?> type);
 
 }
