@@ -1,5 +1,7 @@
 package com.datastructures.collection.internal.map;
 
+import java.util.Objects;
+
 public class Entry <K, V> {
 
     private K key;
@@ -25,5 +27,22 @@ public class Entry <K, V> {
 
     public void setValue(V value) {
         this.value = value;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Entry<?, ?> entry)) return false;
+        return Objects.equals(key, entry.key);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(key);
+    }
+
+    @Override
+    public String toString(){
+        return key.toString() + "=" + value.toString();
     }
 }
