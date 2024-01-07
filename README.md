@@ -2,8 +2,8 @@
 
 Bem-vindo ao Curso de Fundamentos de Estrutura de Dados! Este curso foi projetado para fornecer uma introdução abrangente aos conceitos fundamentais de estruturas de dados e suas aplicações práticas.
 
-- Curso na integra:
-- Material de apoio:
+- Curso na integra: [Acessar curso](https://www.udemy.com/course/fundamentos-de-estruturas-de-dados-em-java/?referralCode=54EF96B62134896D5C20)
+- Material de apoio: [Acessar material](https://drive.google.com/drive/folders/1TFtRn02bPpLaf0Lv8xzpOm9nLIU86i0u)
 
 ## Objetivo do Curso
 
