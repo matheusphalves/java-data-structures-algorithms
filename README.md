@@ -1,69 +1,75 @@
-# Curso de Fundamentos de Estrutura de Dados
 
-Bem-vindo ao Curso de Fundamentos de Estrutura de Dados! Este curso foi projetado para fornecer uma introdução abrangente aos conceitos fundamentais de estruturas de dados e suas aplicações práticas.
+# Estruturas de Dados e Algoritmos — Material do Curso
 
-- Curso na integra: [Acessar curso](https://www.udemy.com/course/fundamentos-de-estruturas-de-dados-em-java/?referralCode=54EF96B62134896D5C20)
-- Material de apoio: [Acessar material](https://drive.google.com/drive/folders/1TFtRn02bPpLaf0Lv8xzpOm9nLIU86i0u)
+Bem-vindas e bem-vindos! Este repositório contém exemplos, implementações e exercícios usados nas aulas de Estruturas de Dados e Algoritmos.
 
-## Objetivo do Curso
+Links úteis:
 
-O principal objetivo deste curso é capacitar os alunos a entender e implementar eficientemente estruturas de dados comuns. Ao longo do curso, você irá:
+- Curso (opcional): https://www.udemy.com/course/fundamentos-de-estruturas-de-dados-em-java/
+- Material de apoio: https://drive.google.com/drive/folders/1TFtRn02bPpLaf0Lv8xzpOm9nLIU86i0u
 
-- Compreender os conceitos fundamentais de estruturas de dados.
-- Aprender a escolher a estrutura de dados certa para diferentes problemas.
-- Implementar estruturas de dados em uma variedade de linguagens de programação.
-- Analisar a complexidade de algoritmos e estruturas de dados.
+**Objetivo**: fornecer implementações didáticas e exercícios que ajudem a entender conceitos fundamentais (listas, pilhas, filas, árvores, tabelas hash, complexidade, etc.).
 
-## Conteúdo do Curso
+**Pré-requisitos**
 
-O curso é dividido em módulos, cada um abordando uma estrutura de dados específica. Os módulos incluem:
+- JDK 20 (recomenda-se usar a mesma versão do curso)
+- Maven
 
-1. **Introdução às Estruturas de Dados**
-    - Definição de estruturas de dados.
-    - Importância e aplicações práticas.
+## Como usar este repositório
 
-2. **Listas ligadas**
-    - Lista simplesmente encadeada (estática e dinâmica)
-
-3. **Listas ligadas**
-    - Lista simplesmente encadeada (estática e dinâmica)
-
-4. **Pilhas e Filas**
-    - Implementação (estática e dinâmica) e aplicação de pilhas.
-    - Implementação (estática e dinâmica) e aplicação de filas.
-
-5. **Árvores**
-    - Árvores binárias.
-    - Árvores de busca binária.
-
-6. **Tabelas Hash**
-    - Implementação (estática e dinâmica) e aplicação de Set.
-    - Implementação (estática e dinâmica) e aplicação de HashMap.
-
-## Pré-requisitos
-
-Para tirar o máximo proveito deste curso, é recomendado ter conhecimento básico em programação e lógica de programação. Familiaridade com alguma linguagem de programação é benéfica, mas não é obrigatória.
-
-## Configuração do Ambiente
-
-Este projeto utiliza Maven para gerenciamento de dependências e construção. Certifique-se de ter o Java 20 e o Maven instalados em seu ambiente de desenvolvimento.
-
-Versão do JDK utilizada: 20 (caso não deseje utilizar esta versão, é possível alterar nas configurações do arquivo pom.xml)
-
-### Clonando e Construindo o Projeto
-
-1. Clone este repositório para o seu ambiente de desenvolvimento local.
-   ```bash
-   git clone https://github.com/matheusphalves/java-data-structures-algorithms.git
-   
-2. Navegue para o diretório do projeto
+1. Clone o repositório:
 
 ```bash
-    cd /java-data-structures-algorithms
-   ```
-3. Construa o projeto utilizando o Maven
+git clone https://github.com/matheusphalves/java-data-structures-algorithms.git
+cd java-data-structures-algorithms
+```
+
+2. Compilar com Maven:
+
 ```bash
-    mvn clean install
-   ```
+mvn clean package
+```
+
+3. Executar uma classe Main compilada (ex.: pacote principal):
+
+```bash
+java -cp target/classes com.basics.datastructures.Main
+```
+
+4. Rodar testes:
+
+```bash
+mvn test
+```
+
+## Estrutura do repositório
+
+- `src/main/java/com/basics/datatypes` — tipos primitivos e classes wrapper.
+- `src/main/java/com/basics/generics` — exemplos com generics e wrappers genéricos.
+- `src/main/java/com/basics/objects` — exemplos com objetos e classes simples.
+- `src/main/java/com/basics/recursion` — exemplos recursivos (fibonacci, exercícios).
+- `src/main/java/com/basics/datastructures` — implementações de listas, pilhas, filas, árvores e tabelas hash.
+
+Dentro de `datastructures` você encontrará:
+
+- `collection/api` — interfaces das estruturas (List, Map, Set, Stack, Queue, Tree, Graph).
+- `collection/impl` — implementações estáticas e dinâmicas (LinkedListImpl, StackImpl, HashMapOpenAddressingImpl, etc.).
+- `collection/internal` — classes auxiliares (nós, entradas, etc.).
+- `playground` — classes de teste/uso rápido para experimentar implementações.
+
+## Sugestões de uso em aula
+
+- Leia e execute as classes em `playground` para ver exemplos simples de uso.
+- Faça alterações nas implementações e rode os testes para validar comportamento.
+- Use `mvn test` frequentemente ao implementar soluções.
+
+## Como contribuir
+
+- Abra uma issue descrevendo a sugestão ou bug.
+- Envie PRs com uma descrição clara e testes quando aplicável.
+
+---
+
+Se tiver dúvidas, traga-as para a aula ou abra uma issue no repositório.
 
 
